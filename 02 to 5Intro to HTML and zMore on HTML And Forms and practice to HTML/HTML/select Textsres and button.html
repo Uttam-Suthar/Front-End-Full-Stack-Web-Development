@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Select Textarea and button</title>
+</head>
+<body>
+
+	<form>
+		<p>Month</p>
+		<select name="Month_selected">
+			<option>Jan</option>
+			<option selected>Feb</option>
+			<option multiple>March</option>
+			<option>April</option>
+		</select>
+
+		<p>Share your Experience</p>
+		<textarea name="Experience" rows="10" cols="30"></textarea><br>
+		<input type="button" value="Button 1">
+		<button type="button">Button 2</button>
+		<button type="button"><img src="Basics/web/static/LOGO-05.png" width="30%"></button>
+
+		<input type="submit">
+
+	</form>
+
+
+	        	<section>
+                    <h2>Leave a reply</h2>
+
+                    <div>
+                        <p>Your email address will not be published. Required fields are marked <span>*</span></p>
+
+                        <form>
+                            <label for="comment">Comment <span>*</span></label>
+                            <textarea name="comment" id="comment" rows="10" cols="30" required></textarea>
+                            <br/>
+                            <label for="name">Name <span>*</span></label>
+                            <input id="name" type="text" required />
+                            <br/>
+                            <label for="email">Email <span>*</span></label>
+                            <input id="email" type="email" required />
+                            <br/>
+                            <label for="website">Website</label>
+                            <input id="website" type="url" />	
+                            <br>
+                            <input type="submit" value="Post Comment"
+                        </form>
+
+                    </div>
+                </section>
+
+</body>
+</html>
