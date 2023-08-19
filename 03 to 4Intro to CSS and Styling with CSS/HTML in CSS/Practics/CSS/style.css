@@ -1,0 +1,41 @@
+
+p{
+	/*color: blue;*/
+	font-size:20px ;
+	/*font-family: sans-serif;*/
+}
+
+h1{
+	font-size: 40px;
+	/*font-family: sans-serif;*/
+}
+h1,p{
+	font-family: sans-serif;
+}
+
+.uppercase{
+	text-transform: uppercase;
+}
+
+.cursive{
+	font-family: cursive;
+}
+
+
+/*nesting only list */
+/*li h4{
+	text-transform: uppercase;
+	font-family: cursive;
+}
+*/
+
+#blog-title:hover{
+	color: orange;
+}
+
+#site-desc p{
+	color: red;
+}
+#blog-desc{
+	color: #314831;
+}

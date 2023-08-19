@@ -1,0 +1,145 @@
+body {
+    margin-left: 60px;
+    margin-right: 20px;
+    font-family: serif;
+}
+
+img {
+    width: 100%;
+}
+
+
+
+/*-----header-----*/
+
+#main-header {
+    margin-top: 60px;
+}
+
+#logo img {
+    max-width: 210px;
+}
+
+#site-title {
+    margin-bottom: 0;
+}
+
+#site-title a {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: bold;
+    line-height: 1.25;
+    font-family: sans-serif;
+}
+
+#site-title a:hover {
+    color: #dc6520;
+}
+
+#about-site {
+    color: #3c5349;
+    margin-top: 5px;
+}
+
+#header-image-container {
+    margin-top: 50px;
+}
+
+
+
+/*-----main-----*/
+
+#content {
+    margin-top: 80px;
+}
+
+main {
+    width: 70%;
+    display: inline-block;
+}
+
+#blog-header {
+    margin-bottom: 50px;
+}
+
+#blog-header h1 {
+    font-size: 3.2rem;
+    color: #13222c;
+    font-family: sans-serif;
+}
+
+#blog-header h1:hover{
+	color: #dc6520;
+}
+
+
+
+/*-----views-----*/
+
+#views {
+    margin-bottom: 3px;
+}
+
+#views img {
+    margin-left: 2px;
+    width: 18px;
+    margin-bottom: -2px;
+}
+
+#views span {
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+
+
+/*-----blog content-----*/
+
+
+
+
+
+/*-----aside-----*/
+
+aside {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 3%;
+    width: 25%;
+}
+
+.widget {
+    border-top: 4px solid black;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.widget input{
+	display: block;
+	background-color: #F7F7F7;
+	margin-bottom: 15PX;
+	padding: 4PX;
+	color: black;
+	font-size: 1.2rem;
+}
+
+.widget-title{
+	font-size: 1.5rem;
+}
+
+
+
+button[type="submit"] {
+    background-color: #1a1a1a;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    color: #fff;
+    /*letter-spacing: 0.1rem;*/
+    line-height: 1;
+    padding: 12px 18px;
+}
+
+button[type="submit"]:hover {
+    background-color: #dc6520;
+}
