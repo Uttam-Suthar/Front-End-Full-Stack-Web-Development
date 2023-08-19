@@ -1,8 +1,0 @@
-1 projects Blog: Walk through your first HTML Page
-https://codesandbox.io/s/blog-walk-through-your-first-html-page-forked-pvk9gp?file=/index.html:13605-20447
-
-2 assingnment HTML Assignment: Create Table
-https://codesandbox.io/s/1-coding-html-assignment-create-table-yh6f2x
-
-3 projects-Create Multiple Forms
-https://codesandbox.io/s/create-multiple-forms-forked-rsvwqd?file=/index.html
