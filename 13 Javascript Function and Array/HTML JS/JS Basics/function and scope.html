@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+		//  globle scope
+		var name= "scope";
+		console.log(name);
+
+
+
+// function scope
+		function scopeDemo() {
+			// body...
+			var i = 10;
+			console.log(i);
+
+		}
+		scopeDemo();
+
+		// function scope
+		function scopeDemo() {
+			// body...
+			var name = "function scope";
+			console.log(name)
+
+		}
+		scopeDemo()
+
+		function scopeDemo() {
+			// body...
+			// var name = "function scope";
+			// then name the value of the globle scope
+			console.log(name)
+
+		}
+		scopeDemo()
+
+
+		// execution context
+		function c(){
+			console.log("inside c");
+		}
+
+		function b(){
+			c();
+			console.log("inside b");
+		}
+
+		function a(){
+			b();
+			console.log("inside a");
+		}
+
+		a()
+		console.log("globle")
+
+
+	</script>
+</body>
+</html>

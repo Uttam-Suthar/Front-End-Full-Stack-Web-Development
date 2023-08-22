@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+		var factorial = function fact(n){
+							var ans=1;
+							for(var i=1; i<=n; i++){
+								ans=ans*i;
+						}
+						return ans;
+					};
+
+
+		function ncr(n,r,factorial){
+			return factorial(n)/(factorial(r)*factorial(n-r));
+		}
+
+		console.log(ncr(5,2,factorial));
+
+
+
+		// question
+// 		var add = function (a, b) {
+//     return a+b;
+// }
+
+// var subtract = function (a, b) {
+//     return a-b;
+// }
+
+// var op = function (func) {
+//     var x = 2;
+//     var y = 3;
+//     return func(x, y);
+// }
+// console.log(op(subtract));
+
+	</script>
+</body>
+</html>

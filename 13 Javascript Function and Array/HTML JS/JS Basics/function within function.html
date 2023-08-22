@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+		// var name="globle"
+		
+		// function outer{
+		// 	// body...
+		// 	var outerVar=10;
+		// 	function inner {
+		// 		// body...
+		// 		var innerVar =100;
+		// 		console.log(innerVar);
+
+		// 	}
+		// 	inner()
+
+		// }
+
+		// outer()
+
+		// var name="globle"
+
+		// function outer{
+		// 	// body...
+		// 	var outerVar=10;
+		// 	function inner {
+		// 		// body...
+		// 		var innerVar =100;
+		// 		var name=2;
+		// 		// console.log(innerVar);
+		// 		console.log(name);
+
+		// 	}
+		// 	inner()
+		// 	// not access the innerVar
+		// 	// console.log(innerVar)
+			
+		// }
+
+		// outer()
+
+
+		var name="globle"
+		
+		function outer{
+			// body...
+			var outerVar=10;
+			function inner {
+				// body...
+				var innerVar =100;
+				// var name=2;
+				// console.log(innerVar);
+				console.log(name);
+
+			}
+			inner()
+			// not access the innerVar
+			// console.log(innerVar)
+			
+		}
+
+		outer()
+
+
+
+// question
+// function a() {
+//     console.log("Inside a");
+
+//     function b() {
+//         console.log("Inside b");
+//     }
+// }
+
+// a();
+
+
+// 		function a() {
+//     console.log("Inside a");
+
+//     function b() {
+//         console.log("Inside b");
+//     }
+// }
+
+// b();
+
+
+
+// var combinedString = "";
+// function a() {
+//     combinedString = "Inside a";
+
+//     function b() {
+//         combinedString = combinedString + " Inside b";
+//     }
+
+//     b();
+// }
+
+// a();
+// console.log(combinedString);
+	</script>
+</body>
+</html>

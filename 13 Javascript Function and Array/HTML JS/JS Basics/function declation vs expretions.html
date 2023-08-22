@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+
+			console.log(fact(5))         // find value 120
+			console.log(factorial(5))       // getting its take error
+
+			console.log(factorial)    // get undefind 
+
+		// function declaration
+		
+		function fact(n){
+			var ans=1;
+			for(var i=1; i<=n; i++){
+				ans=ans*i;
+			}
+			return ans;
+		}
+
+		// function expresions
+
+		var factorial = function fact(n){
+							var ans=1;
+							for(var i=1; i<=n; i++){
+								ans=ans*i;
+						}
+						return ans;
+					}
+
+
+
+		//  question 
+// 		function a() {
+//     console.log("Inside a");
+
+//     function b() {
+//         console.log("Inside b");
+//     }
+// }
+
+// a()b();
+
+
+
+	</script>
+</body>
+</html>

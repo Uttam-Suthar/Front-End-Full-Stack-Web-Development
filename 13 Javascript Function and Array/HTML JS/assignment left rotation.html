@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+function rotateLeft(arr) {
+ 
+
+  const firstElement = arr.shift(); 
+  arr.push(firstElement); 
+  return arr;
+
+//or
+  // const rotatedArray = arr.slice(1); 
+  // rotatedArray.push(arr[0]); 
+  // return rotatedArray;
+
+  //or
+  //   var newarr = []
+  // for (var i = 1; i < arr.length; i++){
+  //   newarr.push(arr[i]);
+  // }
+  // newarr.push(arr[0]);
+
+  //   return newarr
+
+
+}
+
+// Test the function
+const originalArray = [1, 2, 3, 4];
+const rotatedArray = rotateLeft(originalArray);
+console.log(rotatedArray); // Output: [2, 3, 4, 1]
+
+
+
+	</script>
+</body>
+</html>
