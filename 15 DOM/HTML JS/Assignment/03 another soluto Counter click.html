@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Count</title>
+
+    <style type="text/css">
+        
+.container
+{
+    width:200px;
+    height:300px;
+    margin:auto;
+    margin-top: 15%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.box
+{
+    width:100%;
+    height:200px;
+    background-color:red;
+/*     margin-top:-9%; */
+}
+    </style>
+</head>
+<body>
+    
+        <div class="container">
+       	 	<div class="box">
+        	</div>
+            <h3>Box Clicked <span class="counter">0</span> times</h3>
+    </div>
+
+<script type="text/javascript">
+    var box=document.getElementsByClassName('box');
+var Counter =document.getElementsByClassName('counter')
+
+function counterTimer()
+{
+    clickCount++;
+    console.log(clickCount);
+    Counter[0].innerText=clickCount;
+    
+    if (clickCount===5){
+        box[0].style.boxShadow=" 0px 0px 5px 1px lightblue";
+    }
+}
+
+var clickCount=0;
+box[0].addEventListener('click', counterTimer);
+</script>
+</body>
+</html>

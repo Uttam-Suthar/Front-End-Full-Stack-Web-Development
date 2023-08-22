@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color and Shape Change Game</title>
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <style type="text/css">
+    .outer{
+      margin: auto;
+      width: 50%;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button{
+      height: 8%;
+      width: 20%;
+      margin: 20px;
+      min-width: 72px;
+      font-weight: 500;
+      font-family: sans-serif;
+      background-color: #F4F4F4;
+      border: 1px solid #9F9F9F;
+    }
+
+    .container{
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        background-color: #8A2BE2;
+          display: flex;
+        flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      transition: all ease-in-out 0.2s;
+    }
+
+    .square {
+       height: 100px;
+     width: 100px;
+      background-color: white;
+    transition: all ease-in-out 0.2s;
+      }
+    
+    .rectangle {
+      width: 100px;
+      height: 50px;
+      background-color: white;
+      transition: all ease-in-out 0.2s;
+    }
+
+    .triangle-top-left {
+      height: 0px;
+      width: 0px;
+      border-bottom: 100px solid white;
+      border-right: 100px solid transparent;
+      transition: all ease-in-out 0.2s;
+    }
+
+    .triangle-bottom-right {
+      height: 0px;
+  width: 0px;
+  border-top: 100px solid white;
+  border-left: 100px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+
+.triangle-up {
+  height: 0px;
+  width: 0px;
+  border-bottom: 100px solid white;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+.triangle-down {
+  height: 0px;
+  width: 0px;
+  border-top: 100px solid white;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+.triangle-top-right {
+  height: 0px;
+  width: 0px;
+  border-bottom: 100px solid white;
+  border-left: 100px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+
+.triangle-bottom-left {
+  height: 0px;
+  width: 0px;
+  border-top: 100px solid white;
+  border-right: 100px solid transparent;
+  transition: all ease-in-out 0.2s;
+}
+
+
+
+  </style>
+</head>
+
+<body>
+
+  <div class="outer">
+    <div class="container">
+      <div class="square" id="shaper"></div>
+    </div>
+    <button id="change-color">Change Color</button>
+    <button id="change-shape">Change Shape</button>
+  </div>
+  <script>
+
+    "use strict";
+
+var typeOfShapecolors = [
+  "red",
+  "yellow",
+  "green",
+  "blue",
+  "brown",
+  "black",
+  "cyan",
+  "pink",
+  "purple",
+  "orange"
+];
+var typeOfShapes = [
+  "square",
+  "rectangle",
+  "triangle-up",
+  "triangle-down",
+  "triangle-bottom-left",
+  "triangle-bottom-right",
+  "triangle-top-left",
+  "triangle-top-right"
+];
+
+
+  var changeColor=document.getElementById("change-color");
+  var changeShape =document.getElementById("change-shape");
+  var container = document.getElementsByClassName("container");
+  var shape = document.getElementById("shaper")
+
+  changeColor.addEventListener('click',function (){
+    var availableColor=typeOfShapecolors[Math.floor(Math.random()*typeOfShapecolors.length)];
+    container[0].style.backgroundColor = availableColor;
+  })
+
+
+  changeShape.addEventListener('click', function (){
+    var availableShape= typeOfShapes[Math.floor(Math.random() * typeOfShapes.length)];
+    shape.setAttribute("class",availableShape)
+  });
+
+
+
+
+
+  </script>
+</body>
+</html>

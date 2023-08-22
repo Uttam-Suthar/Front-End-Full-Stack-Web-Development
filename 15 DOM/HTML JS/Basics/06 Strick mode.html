@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click Count</title>
+
+    <style type="text/css">
+        
+        #box {
+    height: 250px;
+    width: 250px;
+    background-color: red;
+    margin: 50px auto;
+    cursor: pointer;
+    text-align: center;
+}
+
+#box:hover {
+    box-shadow: 0px 0px 30px grey;
+}
+
+h1 {
+    text-align: center;
+}
+    </style>
+</head>
+<body>
+
+    <div id="box"></div>
+
+    <h1> Box Clicked <span id="click-count"> 0 </span> times </h1>
+
+    <script type="text/javascript">
+
+        "use strict"   // use for all function
+        
+        var box = document.getElementById('box');
+        var clickCount = document.getElementById('click-count');
+        var count = 0;   // if use strict then use var    
+
+    box.addEventListener('click', function(){
+    count++;
+    demo=100             //// if use strict mode of particular function  then use var  without var get error  
+    console.log(count);
+    clickCount.innerText = count + " ";
+});
+    </script>
+
+</body>
+</html>

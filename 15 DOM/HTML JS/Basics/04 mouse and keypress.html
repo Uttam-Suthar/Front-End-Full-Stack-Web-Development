@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		#outer{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			box-sizing: border-box;
+			padding: 50px;
+			margin: 50px;
+		}
+
+		#search{
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="outer"></div>
+
+	<input type="text" name="search" id="search">
+
+	<script type="text/javascript">
+		
+		var outerDiv = document.getElementById("outer");
+
+		outerDiv.addEventListener("mouseover",function (){
+			console.log("mouseover")
+		});
+
+		outerDiv.addEventListener("mouseout",function (){
+			console.log("mouseout")
+		});
+
+		var searchInput = document.getElementById("search");
+
+		// searchInput.addEventListener("keypress",function (){
+		// 	console.log("keypress")
+		// });
+
+		searchInput.addEventListener("keydown",function (){
+			console.log("keypressdown")
+		});
+
+		searchInput.addEventListener("keydown",function (event){
+			console.log("keypressdown",event.keyCode);
+		});
+
+		document.addEventListener("keydown",function (event){
+			console.log("keypressdown",event.keyCode);
+		});
+
+
+
+
+
+	</script>
+</body>
+</html>

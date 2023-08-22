@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #box {
+    width: 200px;
+    height: 200px;
+    background-color: lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    ;
+  }
+</style>
+</head>
+<body>
+<div id="box">Click me!</div>
+<p>Counter: <span id="counter">0</span></p>
+
+<script>
+  const box = document.getElementById('box');
+  const counterElement = document.getElementById('counter');
+  
+  let counter = 0;
+  
+  box.addEventListener('click',function (){
+    counter++;
+    console.log(counter)
+    counterElement.textContent = counter;
+    
+    if (counter === 5) {
+      box.style.backgroundColor = 'green';
+      box.style.boxShadow=" 0px 0px 1px 5px lightblue";
+
+    }
+  });
+</script>
+</body>
+</html>
