@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>light Box Animation</title>
+
+	<style>
+		#Lightbox{
+			height: 0;
+			width: 0;
+			position: fixed;
+			top: 0;
+			left: 0;
+			overflow: hidden;
+    		transition: all 1s ease-in-out;
+
+			
+		}
+
+		#Lightbox:target{
+			width: 30%;
+			height: 30%;
+			/*background-color: lightgrey;*/
+			top: 25%;
+			left: 25%;
+			/*background-color: #0abcf9;*/
+    		background-image: linear-gradient(90deg,#2857a4 0%,#403066 60%);
+    		color: white;
+		}
+		#Lightbox:target a{
+			color: white;
+
+		}
+
+
+	</style>
+</head>
+<body>
+
+	<div>
+		<a href="#Lightbox">LightBox</a>
+	</div>
+
+	<div id="Lightbox"><a href="#">X</a>
+		<p>Light Box Contant</p>
+	</div>
+
+</body>
+</html>
