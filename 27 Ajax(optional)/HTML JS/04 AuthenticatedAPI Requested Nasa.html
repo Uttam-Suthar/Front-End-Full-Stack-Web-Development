@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="image-container" style="margin: 20px;"></div>
+
+    <script src="jquery-3.7.0.js"></script>
+
+    <script>
+
+        // JHS4fp1p7S2vZEqjOv5X0PagJbSJ34eC0sviqGOA
+
+        function displayImage(data) {
+            // creat a new Element in jQuery  AND add    
+            // var imageUrl = data.url;
+            // $("#image-container").attr('src', imageUrl)
+
+            // $('<img>', {
+            //     src: data.url,
+            //     height: '100%',
+            //     width: '100%'
+
+            // }).appendTo('#image-container')
+
+            $(document.createElement('img')).attr('src', data.url).appendTo('#image-container')
+            // $('#image-container').append({})
+
+            // var img = $(document.createElement('img'))
+            // img.attr('src', data.url)
+            // img.appendTo('#image-container')
+        }
+        $.ajax({
+            // url: 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY',
+            url: 'https://api.nasa.gov/planetary/apod?api_key=JHS4fp1p7S2vZEqjOv5X0PagJbSJ34eC0sviqGOA',
+
+            // url: 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=2018-06-05',
+
+            method: 'GET',
+            success: displayImage,
+
+            // url: 'https://api.nasa.gov/planetary/apod',
+            // method: 'GET',
+            // success: displayImage,
+            // api_key: 'DEMO_KEY',
+            // // api_key: 'JHS4fp1p7S2vZEqjOv5X0PagJbSJ34eC0sviqGOA',
+            // // date: '2018-06-05',
+
+
+        });
+    </script>
+
+
+</body>
+
+</html>

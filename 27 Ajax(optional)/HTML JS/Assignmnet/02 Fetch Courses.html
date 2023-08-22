@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Coding Courses</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        #findAll-course {
+            background-color: aliceblue;
+            margin-top: 10%;
+            padding: 20px;
+        }
+
+        #button {
+            margin-top: 30px;
+            padding: 10px 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="findAll-course" class="d-flex flex-column align-items-center p-4">
+        <h1 class="text-capitalize">Get all the courses</h1>
+        <button type="button" id="button" class="px-5 py-3 mt-4">Fetch Courses</button>
+    </div>
+
+    <div id="courses" class="d-flex flex-wrap justify-content-around"></div>
+
+    <!-- <div class="card shadow-sm mx-2 my-4" style="width: 18rem;">
+        <img src="" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text"></p>
+            <p class="card-text text-right"></p>
+        </div>
+    </div> -->
+
+
+    <script src="jquery-3.7.0.js"></script>
+    <script>
+
+        var coursesType = $('#courses')
+        $('#button').click(function () {
+            $.get("https://api.codingninjas.in/api/v3/courses", function (data) {
+                let courses = data.data.courses
+                for (let course of courses) {
+                    coursesType.append(`
+                <div class="card shadow-sm mx-2 my-4" style="width: 18rem;">
+                    <img src="${course.preview_image_url}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text">${course.name}</p>
+                        <p class="card-text text-right">${course.level}</p>
+                    </div>
+                </div>
+            `);
+                }
+
+            })
+
+            $("#findAll-course").remove();
+        })
+
+    </script>
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+
+
+</body>
+
+</html>

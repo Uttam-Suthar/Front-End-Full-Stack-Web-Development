@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NASA Satellite</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        form {
+            display: inline-flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 50px 0;
+            background-image: linear-gradient(-90deg, floralwhite, azure);
+        }
+
+        form input {
+            padding: 5px;
+            width: 20%;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 30px 2px grey;
+        }
+
+        .text-center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        #nasa-images img {
+            max-height: 300px;
+            max-width: 100%;
+            min-height: 200px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="number" id="sol" placeholder="Enter sol (max. 1000)" />
+        <input type="number" id="page" placeholder="Enter page number to display" />
+        <button type="submit">Get Images</button>
+    </form>
+
+    <div id="nasa-images" class="text-center">
+    </div>
+
+    <script>
+
+        var nasaImages = $("#nasa-images");
+        var solInput = $("#sol");
+        var pageInput = $("#page")
+
+        $("form button").click(function (e) {
+            e.preventDefault();
+
+            let sol = solInput.val();
+            let page = pageInput.val();
+            console.log(sol, page);
+
+            if (sol === "" || page === "") {
+                alert("Please fill the field");
+                return;
+            }
+
+            let url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=" + sol + "&page=" + page + "&api_key=J61BmqGnE2uagKACEfmz94FwsvHf6wLdvp5ofRCN";
+
+            $.get(url, function (data) {
+                let photos = data.photos;
+
+                console.log(photos);
+                $("#nasa-images img").remove();
+
+                for (let photo of photos) {
+                    console.log(photo);;
+
+                    console.log("hell", photo.img_src, photo.id);
+                    nasaImages.append('<img src="' + photo.img_src + '" alt="' + photo.id + '">');
+                }
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dog Gallery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        form {
+            display: inline-flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 50px 0;
+            background-image: linear-gradient(-90deg, floralwhite, azure);
+        }
+
+        #dog-breeds {
+            padding: 10px;
+            font-size: 1.4rem;
+            width: 20%;
+            min-width: 200px;
+        }
+
+        #dog-breeds option {
+            padding: 10px;
+            font-size: 1rem;
+        }
+
+        form label {
+            padding: 5px 0;
+        }
+
+        form input {
+            padding: 5px;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            font-family: monospace;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        button:hover {
+            box-shadow: 0px 0px 30px 2px grey;
+        }
+
+        .text-center {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #breed-image img {
+            max-height: 400px;
+            max-width: 100%;
+            min-height: 300px;
+            margin: 20px;
+        }
+
+        #dog-sub-breeds {
+            padding: 10px;
+            font-size: 1.1rem;
+            width: 15%;
+            min-width: 150px;
+        }
+
+        #dog-sub-breeds option {
+            padding: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="">
+        <select id="dog-breeds"></select>
+        <button type="submit">Get Image</button>
+    </form>
+
+    <div id="breed-image" class="text-center">
+    </div>
+
+
+
+    <script>
+
+        var breedImage = $("#breed-image");
+        var dropdown = $("#dog-breeds");
+
+        $.get("https://dog.ceo/api/breeds/list/all", function (data, status) {
+            let dogBreeds = data.message;
+            for (let breed in dogBreeds) {
+                dropdown.append('<option value="' + breed + '">' + breed + '</option>');
+            }
+
+        });
+
+        dropdown.change(function () {
+
+            let breed = dropdown.val();
+            let url = "https://dog.ceo/api/breed/" + breed + "/list";
+
+            $("#dog-sub-breeds").remove();
+
+            $.get(url, function (data) {
+
+                if (data.message.length !== 0) {
+                    let subBreeds = data.message;
+
+                    dropdown.after('<select id="dog-sub-breeds"></select>');
+
+                    var subDropdown = $("#dog-sub-breeds");
+
+                    for (let subBreed of subBreeds) {
+                        subDropdown.append('<option value="' + subBreed + '">' + subBreed + '</option>');
+                        console.log(subBreed);
+                    }
+                }
+
+            });
+            console.log(url);
+        });
+
+        $("form button").click(function (e) {
+            e.preventDefault();
+
+            let breed = dropdown.val();
+            let subBreed = $("#dog-sub-breeds").val();
+
+            let url = "https://dog.ceo/api/breed/" + breed;
+            if (subBreed !== undefined) {
+                url += "/" + subBreed
+            }
+            url += "/images";
+
+            $("#breed-image img").remove();
+
+            $.get(url, function (data) {
+                let imagesUrl = data.message;
+
+                for (let imageUrl of imagesUrl) {
+                    breedImage.append('<img src="' + imageUrl + '" alt="' + breed + '">');
+                }
+            });
+
+        });
+
+
+    </script>
+</body>
+
+
+
+</html>

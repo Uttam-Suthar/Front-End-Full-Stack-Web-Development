@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="fetch-dog-image-button">Fatch image</button>
+
+    <div id="dog-image-container" style="margin: 20px;">
+        <img id="dog-image">
+    </div>
+
+    <script src="jquery-3.7.0.js"></script>
+
+    <script>
+
+        function fetchRandomeDogImage() {
+            var xhrRequest = new XMLHttpRequest()
+
+
+            // onlead is the function when request is recieve 
+            xhrRequest.onload = function () {
+                console.log(xhrRequest.response)
+
+                // to convert string to json objects
+                var responseJSON = JSON.parse(xhrRequest.response)
+                //JSON.stringify // json to string
+                var imageUrl = responseJSON.message;
+                $("#dog-image").attr('src', imageUrl)
+            };
+
+            xhrRequest.open('get', 'https://dog.ceo/api/breeds/image/random', true)   // true means asyncronues
+            xhrRequest.send()
+
+        }
+
+        $("#fetch-dog-image-button").click(fetchRandomeDogImage)
+
+    </script>
+</body>
+
+</html>
