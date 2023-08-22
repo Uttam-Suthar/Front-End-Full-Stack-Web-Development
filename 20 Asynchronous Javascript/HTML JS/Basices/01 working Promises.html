@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //pending promises
+        var promise = new Promise(() => { })
+        console.log(promise);
+
+        // Promise {
+        //         <pending>}[[Prototype]]: Promise[[PromiseState]]: "pending"[[PromiseResult]]: undefined
+
+        // Fullfill
+        var promise = new Promise((resolve, reject) => {
+            resolve("Hey promise result")
+        })
+        console.log(promise);
+
+        // Promise {
+        //         <fulfilled>: 'Hey promise result'}[[Prototype]]: Promise[[PromiseState]]: "fulfilled"[[PromiseResult]]: "Hey promise result"
+
+        // rejected
+        var promise = new Promise((resolve, reject) => {
+            reject("Hey somthing wang wrong")
+        })
+        console.log(promise);
+
+
+        var promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ message: "success" })
+            }, 3000)
+        })
+        console.log(promise);
+
+
+        var promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve({ message: "success" })
+            }, 3000)
+        })
+
+        // after fullfill this .then  is functioon will be print after 3 second when promise are fullfile then func will be call then print message
+        promise.then((data) => {
+            console.log(data)
+        })        // out put is { message: "success" }
+
+
+        var promise = new Promise((resolve, reject) => {
+            //setTimeout(()=>{
+            //resolve({message:"success"})},3000)
+            setTimeout(() => {
+                reject({ message: "error" })
+            }, 3000)
+
+        })
+
+
+        promise
+            .then((data) => {
+                console.log(data)
+            })
+            .catch((error) => {
+                console.log("error", error)
+            })
+
+
+
+    </script>
+</body>
+
+</html>

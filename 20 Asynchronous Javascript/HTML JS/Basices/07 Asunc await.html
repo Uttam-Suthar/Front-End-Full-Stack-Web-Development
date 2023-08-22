@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var promise = new Promise(function (resolve, reject) {
+            resolve("Resolve")
+        })
+        promise.then(data => console.log(data))
+
+        async function asyncTask() {
+            return "Resolve"
+        }
+
+        asyncTask()
+
+
+
+
+        //await function
+        function getData() {
+            return promise.resolve("Some data")
+        }
+
+        async function abc() {
+            const data = await getData()
+            console.log(data)
+        }
+        console.log(1)
+        abc()
+
+
+        //op 1 some data
+
+        //que
+        async function x() {
+            try {
+                await Promise.reject("Rejected!!")
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        // “Rejected!!” will get printed
+
+
+        async function x() {
+            try {
+                await Promise.reject("Rejected!!")
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        x()
+            .catch((msg) => {
+                console.log(msg)
+            })
+
+            // “Rejected!!” will get printed
+    </script>
+</body>
+
+</html>
