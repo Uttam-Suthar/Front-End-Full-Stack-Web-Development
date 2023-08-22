@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        console.log(String(100))
+
+        console.log(String(true))
+        console.log(String(null))
+
+        console.log((123).toString())
+        console.log((null).toString())   // error only one
+
+
+        // convert to num 
+        console.log(Number("55"))
+        console.log(Number("55f"))    //Nan
+        console.log(Number("value"))   //Nan  not a num
+        console.log(Number(true))   //1
+
+
+        // unary operator
+        let a = "123"
+        console.log(+ a)
+        let b = "123uttam"
+        console.log(+ b)   //Nan
+
+        console.log(parseInt("1234f"))   // 1234
+    console.log(parseInt("1234f"))      // Nan
+  
+
+    console.log(parseInt("234.444f"))    // 234
+    console.log(parseFloat("123.445f"))  //123.445
+
+    console.log(Boolean(undefined))  //true
+
+    console.log(Boolean("true"))  // true
+    console.log(Boolean("false")) // true
+
+
+    y = "hello" + Number("uu")
+     console.log(y)  // 'helloNaN'
+
+     console.log(parseFloat("3.14.15"))  //3.14
+     
+    </script>
+</body>
+</html>
