@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        when chaing is lot of asyncrones requested  it callback hall
+
+        $.ajax({success:function(){
+            $.ajax({success:function(){
+                $.ajax({
+
+                })
+            }})
+        }})
+
+        */
+
+
+
+        var useLoggedin = true
+        function checkUseLoggedIn() {
+            var promise = new Promise((resolve, rejecte) => {
+                setTimeout(() => {
+                    if (useLoggedin) {
+                        resolve("use logged in")
+                    }
+                    else {
+                        rejecte()
+                    }
+                }, 1000)
+            })
+            return promise;
+        }
+        setTimeout(() => {
+            useLoggedin = true
+        }, 500)
+
+        checkUseLoggedIn().then((successMsg) => { console.log(successMsg) }).catch(() => { console.log("use do not logged in ") })
+
+
+        // checkUseLoggedIn().then(fetchFeed).then(fetchUserFreinds).then(fetchUseMsg);
+
+
+    </script>
+
+</body>
+
+</html>

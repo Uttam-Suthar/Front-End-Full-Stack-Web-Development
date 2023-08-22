@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var useLoggedin = true
+        var promise = new Promise((resolve, rejecte) => {
+            setTimeout(() => {
+                if (useLoggedin) {
+                    resolve()
+                }
+                else {
+                    rejecte()
+                }
+            }, 1000)
+        })
+
+        setTimeout(() => {
+            useLoggedin = true
+        }, 500)
+
+        promise.then(() => {
+            console.log("secusse")
+        })
+            .catch(() => {
+                console.log("use do not logged in ")
+            })
+
+
+        var useLoggedin = true
+        var promise = new Promise((resolve, rejecte) => {
+            setTimeout(() => {
+                if (useLoggedin) {
+                    resolve({ message: "succesefully" })
+                }
+                else {
+                    rejecte()
+                }
+            }, 1000)
+        })
+        promise.then((data) => {
+            console.log(data)
+        })
+            .catch(() => {
+                console.log("use do not logged in ")
+            })
+    </script>
+
+</body>
+
+</html>
