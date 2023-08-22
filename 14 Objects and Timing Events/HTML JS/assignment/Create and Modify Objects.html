@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    var main = function () {
+      // Use it to set the student and address objects
+      let student, address;
+      // let student = {};
+      // let address = {};
+      function setStudent() {
+        // Update this function to set the student object (Step 1)
+        student = {
+          "name": "name",
+          "age": 28,
+          "roll no": 2
+        };
+
+      }
+      function setAddressAndUpdateStudent() {
+        // Update this function to set the address object and set the student object again (Step 2)
+
+        address = {
+          City: "city",
+          state: "state"
+        };
+
+        // Adding the "address" object to the student object
+        student.address = address;
+
+      }
+
+      function deleteRollNumber() {
+        // Update this function to remove 'roll no' property from the student object (Step 3)
+        delete student["roll no"];
+      }
+
+      function getStudent() {
+        return student;
+      }
+      function getAddress() {
+        return address;
+      }
+      return {
+        setStudent,
+        setAddressAndUpdateStudent,
+        deleteRollNumber,
+        getStudent,
+        getAddress
+      };
+    };
+
+
+  </script>
+</body>
+
+</html>

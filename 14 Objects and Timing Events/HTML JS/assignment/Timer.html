@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+  <script>
+    function timer() {
+      for (let i = 1; i <= 5; i++) {
+        setTimeout(
+          function () {
+            //Write your code here...
+            console.log(i)
+          }, i * 1000//write your code here...);
+        );
+        console.log("Hello ninjas!");
+      }
+    }
+
+    timer();
+
+    // Do not edit the rest of the code
+
+
+
+    setTimeout(function () {
+      console.log("a")
+    }, 20)
+    setTimeout(function () {
+      console.log("b")
+    })
+    console.log("c")
+  </script>
+</body>
+
+</html>

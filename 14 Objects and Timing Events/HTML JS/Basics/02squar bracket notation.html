@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+
+				var student= {"-name":"abc",rollno: 135,marks:90, "2":"two"};
+					console.log(student);
+					student.marks=100;
+					console.log(student);
+					student.sem=4;
+					console.log(student);
+
+
+				function printproperty(obj,pro){
+  					console.log(obj[pro])
+						}
+
+
+				printproperty(student,"marks");
+				var pro = "marks"
+				printproperty(student,pro);
+				var pro = "-name"
+				printproperty(student,pro);
+
+
+			
+
+
+	</script>
+</body>
+</html>

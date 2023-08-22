@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script>
+		
+		// var student= {};  // its create an empty objects
+		// var student= {name:"abc",rollno: 135,marks:90};      // both same bcz key in string
+		var student= {"name":"abc",
+					rollno: 135,
+					marks:90
+				};
+
+		// . notation for use access the property od kay  
+
+		console.log(student)
+		// student   //acces the ojects
+		// student.marks     //marks
+		// student.marks=100    //change marks
+// 		var student= {"name":"abc",rollno: 135,marks:90};
+// console.log(student);
+// student.marks=100;
+// console.log(student);
+		
+
+		// if key is not present in objects then we want to acces the ksy get undefind
+		console.log(student.sem)   // find undefind
+		student.sem=4;
+		console.log(student)    // add sem in the objects
+
+
+// 		var student= {"name":"abc",rollno: 135,marks:90};
+// console.log(student);
+// student.marks=100;
+// console.log(student);
+// student.sem=4;
+// console.log(student);
+
+						
+
+							//  [""] can acces the peropertis 
+
+							console.log(student["marks"])    // find 90
+							console.log(student[marks])      not find error bcs "" not use
+
+
+
+
+				var student= {"-name":"abc",
+					rollno: 135,
+					marks:90,
+					"2": "two"
+				};
+
+				console.log(student.-name)    cont access by . notation   error bt
+
+				console.log(student["-name"])
+
+				console.log(student.2)    //error
+				console.log(student["2"])   // get two
+
+
+
+
+				// var student= {"-name":"abc",rollno: 135,marks:90, "2":"two"};
+				// 	console.log(student);
+				// 	student.marks=100;
+				// 	console.log(student);
+				// 	student.sem=4;
+				// 	console.log(student);
+
+
+				// function printproperty(obj,pro){
+  		// 			console.log(obj[pro])
+				// 		}
+
+
+				// printproperty(student,"marks");
+				// var pro = "marks"
+				// printproperty(student,pro);
+				// var pro = "-name"
+				// printproperty(student,pro);
+
+
+	</script>
+</body>
+</html>
