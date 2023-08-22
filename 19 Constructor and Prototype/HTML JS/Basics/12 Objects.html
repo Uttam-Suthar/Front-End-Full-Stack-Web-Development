@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function vehicle(numWheels, price) {
+            this.numWheels = numWheels;
+            this.price = price;
+            /*
+                   //  this.getprice = function () {
+                     //    return this.price
+                     //}*/
+        }
+
+        vehicle.prototype.getprice = function () {
+            return this.price;
+        }
+
+        var vehicle1 = new vehicle(2, 50000);
+        var vehicle2 = new vehicle(4, 500000);
+
+
+//             Object
+// ƒ Object() { [native code] }
+//                 Object.prototype
+//                 { constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, … }
+//                 var obj = new Object()
+//                 undefined
+//                 obj
+//                 { }
+//                 Object.getPrototypeOf(obj)
+//                 { constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, … }
+//                 Object.prototype.isPrototypeOf(obj)
+//                 true
+//                 vehicle1
+//                 VM459: 1 Uncaught ReferenceError: vehicle1 is not defined
+//                 at < anonymous >: 1: 1
+//                     (anonymous) @VM459: 1
+//                 vehicle
+//                 VM492: 1 Uncaught ReferenceError: vehicle is not defined
+//                 at < anonymous >: 1: 1
+//                     (anonymous) @VM492: 1
+//                 vehicle
+// ƒ vehicle(numWheels, price) {
+//                     this.numWheels = numWheels;
+//                     this.price = price;
+//             /*
+//                    //  this.getprice = function () {
+//                      //    retu…
+// vehicle1
+// vehicle {numWheels: 2, price: 50000}
+// vehicle1.color
+// undefined
+// vehicle.prototype
+// {getprice: ƒ, constructor: ƒ}
+// vehicle1.__proto__
+// {getprice: ƒ, constructor: ƒ}
+// var obj={}
+// undefined
+// obj.color="black"
+// 'black'
+// vehicle1.color
+// undefined
+// Object.prototype.color="black"
+// 'black'
+// vehicle1.color
+// 'black'
+// vehicle.prototype.color="red"
+// 'red'
+// vehicle1.color
+// 'red'
+// vehicle1.hasOwnProperty("color")
+// false
+
+
+
+    </script>
+</body>
+
+</html>

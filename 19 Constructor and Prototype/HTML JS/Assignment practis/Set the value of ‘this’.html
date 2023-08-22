@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const john = {
+            name: "John",
+            greet: function () {
+                console.log("Hello! My name is " + this.name);
+            }
+        }
+
+        const CN = {
+            name: "Coding Ninjas",
+            printName: function () {
+                console.log(this);
+            }
+        };
+
+        // Hard binding for the printName() function
+        const printNameHardBound = CN.printName.bind(john);
+        printNameHardBound();
+
+        // Using the greet() function with any binding
+        const greetWithAnyBinding = john.greet.bind(CN);
+        greetWithAnyBinding();
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        class Vehicle {
+            constructor(numWheels, price) {
+                this.numWheels = numWheels;
+                this.price = price
+            }
+
+            getprice() {
+                return this.price;
+            }
+        }
+        // var vehicle1 = new Vehicle(2, 50000);
+        // var vehicle2 = new Vehicle(4, 500000);
+        class Vehicle {
+            constructor(numWheels, price) {
+                this.numWheels = numWheels;
+                this.price = price
+            }
+
+            getprice() {
+                return this.price;
+            }
+
+            printDescription() {
+                console.log("Vehicle", this.numWheels, this.price);
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(numDoor, price) {
+                super(4, price)
+                this.numDoor = numDoor;
+            }
+            printDescription() {
+                super.printDescription();
+                console.log("Car", this.numDoor)
+            }
+        }
+
+        var c = new Car(4, 40000)
+        undefined
+
+        console.log(c)
+        console.log(c.printDescription());
+        //             c
+        // Car { numWheels: 4, price: 40000, numDoor: 4 }
+        //             c.printDescription()
+        //             VM643: 12 Vehicle 4 40000
+        //             VM643: 23 Car 4
+
+
+        // que  
+        class Vehicle {
+            constructor(doors, wheels) {
+                this.doors = doors;
+                this.wheels = wheels;
+            }
+        }
+        class bus extends Vehicle {
+            constructor(windows) {
+                this.windows = windows;
+            }
+        }
+        var b = new bus(10);
+        console.log(bus.windows);
+            // ans
+        // Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+    </script>
+</body>
+
+</html>

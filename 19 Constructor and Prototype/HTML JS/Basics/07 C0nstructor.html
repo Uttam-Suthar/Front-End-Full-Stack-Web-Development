@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        'use strict'
+        function Student(name, rollNo, marks) {
+            console.log(this)                  //{}
+            this.name = name;
+            this.rollNo = rollNo;
+            this.marks = marks;
+
+
+        }
+
+        var student1 = new Student("abc", 40, 88)
+        console.log(student1)
+
+        var student2 = new Student("xyz", 89, 98)
+        console.log(student2)
+
+        var student1 = new Student("abc", 40, 88)
+        console.log(student1)
+
+        var student2 = Student("xyz", 89, 98)
+        console.log(student2)          // undefind bcz fun not return anithing
+
+
+        //que
+        function User(name) {
+            this.name = name;
+            this.isAdmin = false;
+            return;
+        }
+        var user = User("Julie");
+        console.log(user);
+        //undefind
+
+
+        function User(name) {
+            this.isAdmin = false;
+        }
+        var user = new User("James");
+        console.log(user);
+
+        // {isAdmin:false}
+
+    </script>
+</body>
+
+</html>

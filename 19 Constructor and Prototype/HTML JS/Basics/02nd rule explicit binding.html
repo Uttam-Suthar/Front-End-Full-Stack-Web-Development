@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        const john = {
+            name: "John"
+        }
+
+        function ask() {
+            console.log(this, this.name)
+        }
+
+        ask()  // output window object
+        ask.call(john)  // out put {name:'john'}'john'
+        ask.apply(john) // {name:'john'}'john'
+
+        var raj = {
+            name: "Raj",
+            greet: function () {
+                console.log("Hello", this)
+            }
+
+        }
+        raj.greet()  // Hello {name:'Raj,greet:f}
+        // all run in console
+        // Hello { name: 'Raj', greet: ƒ }
+        //     undefined
+        //     var localAsk = raj.greet
+        //     undefined
+        //     localAsk()
+        //     VM323: 4 Hello Window { window: Window, self: Window, document: document, name: '', location: Location, … }
+        //     undefined
+        //     var localAsk = raj.greet.bind(raj)
+        //     undefined
+        //     localAsk()
+        //     VM323: 4 Hello { name: 'Raj', greet: ƒ }
+        //     undefined
+        //     setTimeout(raj.greet)
+        //     1
+        //     VM323: 4 Hello Window { window: Window, self: Window, document: document, name: '', location: Location, … }
+        //     setTimeout(raj.greet.bind(raj), 1000)
+        //     2
+        //     VM323: 4 Hello { name: 'Raj', greet: ƒ }
+
+
+        // que  
+        const CN = {
+            name: "Coding Ninjas"
+        };
+
+        function print() {
+            console.log(this);
+        }
+
+        print.bind(CN)();
+
+        // output  {name:"coding ninja"}
+        // The CN object will be printed as it is hard bound with the current execution context of the function.
+
+        var joe = {
+            name: "Joe",
+            hello: function () {
+                console.log("hi, I am " + this.name);
+            }
+        }
+
+        var globalHello1 = joe.hello.bind(joe);
+        var globalHello2 = joe.hello;
+        globalHello1();
+        globalHello2.bind(joe)();
+
+        //‘hi, I am Joe’ ‘hi, I am Joe’
+
+        var joe = {
+            name: "Joe"
+        };
+
+        function print() {
+            console.log(this);
+        }
+        //Explicit Binding Examples
+        // print.apply(joe);
+        //     window.print.call(joe);
+        //     print.bind(joe)();
+
+
+
+        //que
+        var joe = {
+            name: "Joe"
+        };
+
+        function print() {
+            console.log(this);
+        }
+                    // output call can
+                    // print.bind(joe)();
+                    //     print.call(joe);
+                    //     print.apply(joe);
+
+
+
+    </script>
+</body>
+
+</html>

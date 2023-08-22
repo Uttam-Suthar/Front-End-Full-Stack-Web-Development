@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var raj = {
+            name: "Raj",
+            greet: function () {
+                console.log("Hello", this)
+            }
+
+        }
+        undefined
+        raj.greet()
+        // and and binding
+        // VM839: 4 Hello { name: 'Raj', greet: ƒ }
+        // undefined
+        // var localAsk = raj.greet
+        // undefined
+        // localAsk()
+        // VM839: 4 Hello Window { window: Window, self: Window, document: document, name: '', location: Location, … }
+        // undefined
+    </script>
+</body>
+
+</html>

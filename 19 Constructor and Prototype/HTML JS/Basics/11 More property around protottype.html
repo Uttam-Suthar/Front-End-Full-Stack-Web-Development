@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function vehicle(numWheels, price) {
+            this.numWheels = numWheels;
+            this.price = price;
+            /*
+                   //  this.getprice = function () {
+                     //    return this.price
+                     //}*/
+        }
+
+        vehicle.prototype.getprice = function () {
+            return this.price;
+        }
+
+        var vehicle1 = new vehicle(2, 50000);
+        var vehicle2 = new vehicle(4, 500000);
+
+        //         vehicle1
+        // vehicle { numWheels: 2, price: 50000 } numWheels: 2price: 50000[[Prototype]]: Objectgetprice: ƒ()constructor: ƒ vehicle(numWheels, price)arguments: nullcaller: nulllength: 2name: "vehicle"prototype: { getprice: ƒ, constructor: ƒ } [[FunctionLocation]]: VM857: 2[[Prototype]]: ƒ()[[Scopes]]: Scopes[1][[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+        //         vehicle1.__proto__
+        //         { getprice: ƒ, constructor: ƒ }
+        //
+        //         vehicle1.__proto__ === vehicle.prototype
+        //         true
+        //         Object.getPrototypeOf(vehicle1)
+        //         { getprice: ƒ, constructor: ƒ }
+        //         Object.getPrototypeOf(vehicle1) === vehicle.prototype
+        //         true
+
+
+        //
+        // vehicle.prototype.isPrototypeOf(vehicle1)
+        // true
+        // vehicle.prototype.isPrototypeOf(vehicle2)
+        // true
+
+
+        // vehicle.hasOwnProperty("price")
+        //     false
+        //     vehicle1.hasOwnProperty("price")
+        //     true
+        //     vehicle2.hasOwnProperty("price")
+        //     true
+        //     vehicle.hasOwnProperty("getprice")
+        //     false
+        //     vehicle1.hasOwnProperty("getprice")
+        //     false
+
+
+        //     vehicle.prototype.color = "black"
+        //         'black'
+        //         vehicle.prototype
+        //         { color: 'black', getprice: ƒ, constructor: ƒ }
+        //         vehicle1.color = "black"
+        //         'black'
+        //         vehicle1
+        // vehicle { numWheels: 2, price: 50000, color: 'black' }
+        //         vehicle1.color = "white"
+        //         'white'
+        //         vehicle.prototype
+        //         { color: 'black', getprice: ƒ, constructor: ƒ }
+        //         vehicle1.color
+        //         'white'
+        //         vehicle2.color
+        //         'black'
+        //         vehicle.hasOwnProperty("color")
+        //         false
+        //         vehicle1.hasOwnProperty("color")
+        //         true
+        //         vehicle.prototype.hasOwnProperty("color")
+        //         true
+        //         vehicle2.hasOwnProperty("color")
+        //         false                              // bcz in vehicle2 color not add 
+
+
+        // ques
+
+        var a = new Boolean();
+        console.log(Object.getPrototypeOf(a));
+
+        // Boolean { false, constructor: ƒ, toString: ƒ, valueOf: ƒ }
+
+        function Person(age) {
+            this.age = age;
+        }
+        var p1 = new Person(9);
+        console.log(Person.hasOwnProperty("name"));
+
+        // true
+        // Explanation: Every function has a property called ‘name’. By default, the value of ‘name’ is set to the function's name.
+
+
+    </script>
+</body>
+
+</html>

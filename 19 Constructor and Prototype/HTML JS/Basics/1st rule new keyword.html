@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function vehicle() {
+        //     console.log(this)
+        // }
+
+        // new vehicle()
+
+        // out put when use in console
+        //         vehicle { }
+        //         vehicle { }
+
+        function vehicle(name) {
+            this.name = name;
+            console.log(this)
+        }
+
+        new vehicle("car")
+
+        // output when run in conslole  vehicle {name: 'car'}
+// vehicle { name: 'car' }
+
+    </script>
+</body>
+
+</html>

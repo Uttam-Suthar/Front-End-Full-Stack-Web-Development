@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    hoistion is not possible in class   give error vehicle is not a constructor
+        var vehicle1 = new Vehicle(2, 50000);
+        var vehicle2 = new Vehicle(4, 500000);
+
+        class Vehicle {
+            constructor(numWheels, price) {
+                this.numWheels = numWheels;
+                this.price = price
+            }
+
+            getprice() {
+                return this.price;
+            }
+        }
+
+
+
+        // class expression
+
+
+        var Vehicle = class {
+            constructor(numWheels, price) {
+                this.numWheels = numWheels;
+                this.price = price
+            }
+
+            getprice() {
+                return this.price;
+            }
+        }
+        var vehicle1 = new Vehicle(2, 50000);
+        var vehicle2 = new Vehicle(4, 500000);
+
+
+        //que 
+        var Person = class {
+            constructor() { }
+            sayHello() {
+                return 'Hello!';
+            }
+        };
+        var instance = new Person();
+        console.log(instance.sayHello() + " " + Person.name);
+
+        // Hello! Person
+        // Solution Description
+        //     Explanation: Every function has a property called ‘name’. By default, the value of ‘name’ is set to the function's name. At the back, the class is converted into a function only. Hence the ‘name’ property takes up the value of the class name. The class syntax is just syntactical sugar over conventional function prototypes.
+
+
+
+    </script>
+</body>
+
+</html>

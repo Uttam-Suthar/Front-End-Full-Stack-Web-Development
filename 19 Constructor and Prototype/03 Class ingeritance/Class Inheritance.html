@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        //         Class Inheritance
+        // Send Feedback
+        // A class Person is defined already, Create a class named Student inheriting the Person class and consisting of the properties class and rollNo.Then, create another class named Teacher inheriting Person class and consisting of the properties teacherId and subject.Call the constructor of its parent in both the classes.Create a method getDetails() in both the classes which will return an array with data in the following order:
+        // For Student[name, rollNo, class]
+        // For Teachers[name, teacherID, subject]
+        // The constructors of both the classes will receive arguments in the same order.
+
+        //         Custom Test Case
+        // djskklal 3232 safa 3242 fsvs 433
+
+        //             EXECUTE
+
+        //             Result
+        // Your Output
+        // djskklal 3232 safa
+        //             3242 fsvs 433
+
+        // Expected Output
+        // djskklal 3232 safa
+        //             3242 fsvs 433
+
+
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+        }
+
+        //Define Student and teacher class here
+
+        class Student extends Person {
+            constructor(name, rollNo, className) {
+                super(name);
+                this.rollNo = rollNo;
+                this.className = className;
+            }
+            getDetails() {
+                return [this.name, this.rollNo, this.className];
+            }
+        }
+
+
+
+        class Teacher extends Person {
+            constructor(name, teacherID, subject) {
+                super(name);
+                this.teacherID = teacherID;
+                this.subject = subject;
+            }
+            getDetails() {
+                return [this.name, this.teacherID, this.subject];
+            }
+        }
+
+        // Input and output has already been handled for you
+
+
+        process.stdin.resume()
+        process.stdin.setEncoding('utf8')
+
+        let remainder = ''
+        process.stdin.on('data', function (chunk) {
+            let arr = chunk.toString()
+            arr = arr.replace('\r', '')
+            arr = arr.replace('\n', '')
+            arr = arr.split(' ')
+            let s1 = new Student(arr[0], arr[1], arr[2])
+            let t1 = new Teacher(arr[3], arr[4], arr[5])
+            let ans = s1.getDetails().join(' ')
+            ans += '\n' + t1.getDetails().join(' ')
+            process.stdout.write(ans)
+            process.exit();
+        });
+
+    </script>
+</body>
+
+</html>

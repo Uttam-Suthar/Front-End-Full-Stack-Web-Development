@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function vehicle(numWheels, price) {
+            this.numWheels = numWheels;
+            this.price = price;
+            this.getprice = function () {
+                return this.price
+            }
+        }
+
+        var vehicle1 = new vehicle(2, 50000);
+        var vehicle2 = new vehicle(4, 500000);
+    </script>
+</body>
+
+</html>

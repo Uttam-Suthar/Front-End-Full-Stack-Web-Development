@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var student = {
+            name: "abc",
+            rollNo: 55,
+            marks: 85
+        }
+        var student2 = {
+            name: "xyz",
+            rollNo: 50,
+            marks: 90
+        }
+
+        function creatStudent(name, rollNo, marks) {
+            var student = {}
+            student.name = name;
+            student.rollNo = rollNo;
+            student.marks = marks;
+            return student
+        }
+
+        var student1 = creatStudent("abc", 40, 88)
+        console.log(student1)
+
+        var student2 = creatStudent("xyz", 89, 98)
+        console.log(student2)
+
+    </script>
+</body>
+
+</html>

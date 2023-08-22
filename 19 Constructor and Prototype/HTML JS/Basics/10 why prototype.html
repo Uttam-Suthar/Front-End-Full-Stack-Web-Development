@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function vehicle(numWheels, price) {
+            this.numWheels = numWheels;
+            this.price = price;
+            //  this.getprice = function () {
+            //    return this.price
+            //}
+        }
+
+        vehicle.prototype.getprice = function () {
+            return this.price;
+        }
+
+        var vehicle1 = new vehicle(2, 50000);
+        var vehicle2 = new vehicle(4, 500000);
+
+        // use in console
+        //         vehicle   
+        // ƒ vehicle(numWheels, price) {
+        //             this.numWheels = numWheels;
+        //             this.price = price;
+        //           //  this.getprice = function () {
+        //             //    return this.price
+        //             //}
+        //    …
+        //             vehicle1
+        // vehicle { numWheels: 2, price: 50000 }
+        //             vehicle1.getprice()
+        //             50000
+        //             vehicle2
+        // vehicle { numWheels: 4, price: 500000 }
+        //             vehicle2.getprice()
+        //             500000
+        //             vehicle()
+        //             undefined
+        //             vehicle.prototype
+        //             { getprice: ƒ, constructor: ƒ }
+        //             vehicle1.color = "black"
+        //             'black'
+        //             vehicle.prototype.color = "black"
+        //             'black'
+        //             vehicle2.color = "black"
+        //             'black'
+        //             vehicle1.color
+        //             'black'
+        //             vehicle2.color
+        //             'black'
+        //             vehicle.prototype
+        //             { color: 'black', getprice: ƒ, constructor: ƒ }
+
+
+
+
+
+
+
+        // question
+        function Person(name) {
+            this.name = name;
+        }
+        var p1 = new Person("Joy");
+        var p2 = new Person("Julie");
+        Person.prototype.getName = function () { return this.name };
+        console.log(p1.getName() + " is friend with " + p2.getName());
+
+        //Joy is friend with Julie
+
+
+        function Person(name) {
+            this.name = name;
+        }
+        var p1 = new Person("Joy");
+        var p2 = new Person("Julie");
+
+        Person.prototype.getName = function () { return this.name };
+
+        p1.getName = function () { return "John" };
+        console.log(p1.getName() + " is friend with " + p2.getName());
+        p2.getName = function () { return 'Jonson' };
+
+        // John is friend with Julie
+
+        function Person(name) {
+            this.name = name;
+        }
+        var p1 = new Person("Joy");
+        var p2 = new Person("Julie");
+
+        Person.prototype.getName = function () { return this.name };
+
+        p1.getName = function () { return "John" };
+        p2.getName = function () { return 'Jonson' };
+        console.log(p1.getName() + " is friend with " + p2.getName());
+
+                    // John is friend with jonson
+    </script>
+</body>
+
+</html>

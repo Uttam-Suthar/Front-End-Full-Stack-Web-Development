@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function bike() {
+            console.log(this.name);
+        }
+        var name = "Ninja";
+        bike();
+        // Ninja
+
+        "use strict"
+        function bike() {
+            console.log(this.name);
+        }
+        var name = "Ninja";
+        bike();
+
+        // Error because this is undefined
+
+        function Abc() {
+            "use strict"
+            this.a = 25;
+            return { a: 35, b: 44 };
+        }
+        var obj = new Abc();
+        console.log(obj.a, obj.b);
+        //35 44
+
+        function User(name) {
+            this.isAdmin = false;
+            return name;
+        }
+        var user = User("Jack");
+        console.log(user);
+
+        //Jack
+
+
+
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            get name() {
+                return this._name;
+            }
+            set name(value) {
+                this._name = value;
+            }
+        }
+        var person = new Person("James");
+        undefined
+
+        person.name
+        'James'
+
+        person.name = "Jones"
+        'Jones'
+        // this is person.name() gettting error
+        person.name()
+        VM926: 1 Uncaught TypeError: person.name is not a function
+            at<anonymous>: 1: 8
+
+        person._name = "Jones"
+        'Jones'
+
+
+        var ninja = {
+            name: 'Ninja',
+            getName: function () {
+                var name = this.name;
+                return name;
+            }
+        };
+        var funcName = function (snack, hobby) {
+            console.log(this.getName() + ' loves ' + snack + ' and ' + hobby);
+        };
+        funcName.call(ninja, 'sushi', 'algorithms');
+        funcName.apply(ninja, ['sushi', 'algorithms']);
+
+        // Ninja loves sushi and algorithms Ninja loves sushi and algorithms
+
+        //         Which keyword is used to create a getter method in class?
+        //             Options
+        // This problem has only one correct answer
+        //         get
+
+
+        function MyClass() { }
+
+        const obj1 = new MyClass();
+        const obj2 = MyClass();
+
+        console.log(obj1);
+        console.log(obj2);
+        Options
+        // This problem has only one correct answer
+        // MyClass{ } undefined
+
+
+        class MyClass {
+            constructor(x) {
+                console.log("constructor is called!");
+                this.x = x;
+            }
+        }
+
+        const obj = new MyClass();
+        console.log(obj.x);
+
+        // constructor is called! undefined
+    </script>
+</body>
+
+</html>
