@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var i = 10;
+        function outer() {
+            var j = 20;
+            // console.log(i, j);
+            var inner = function () {
+                var k = 30;
+                console.log(j, k);
+                k++
+
+            }
+            return inner
+        }
+        var inner = outer()
+        inner()      // 20 30
+        inner()      //20 30
+
+        var i = 10;
+        function outer() {
+            var j = 20;
+            // console.log(i, j);
+            var inner = function () {
+                var k = 30;
+                console.log(j, k);
+                j++
+                k++
+
+            }
+            return inner
+        }
+        var inner = outer()
+        inner()      // 20 30
+        inner()      //21 30
+
+        var i = 10;
+        function outer() {
+            var j = 20;
+            // console.log(i, j);
+            var inner = function () {
+                var k = 30;
+                console.log(i, j, k);
+                i++
+                j++
+                k++
+
+            }
+            return inner
+        }
+        var inner = outer()
+        inner()      //10 20 30
+        inner()      //11 21 30
+
+        var i = 10;
+        function outer() {
+            var j = 20;
+            // console.log(i, j);
+            var inner = function () {
+                var k = 30;
+                console.log(i, j, k);
+                i++
+                j++
+                k++
+
+            }
+            return inner
+        }
+        var inner = outer()
+        inner()      //10 20 30
+        var inner = outer()
+        inner()      //11 20 30
+
+        function Adder(x) {
+            return function (y) {
+                return x + y;
+            };
+        }
+        var add5 = Adder(5);
+        var add10 = Adder(10);
+        console.log(add5(2));
+        console.log(add10(2));
+
+        // 7 12 
+
+        var add = (function () {
+            var counter = 0;
+            return function () {
+                counter += 1;
+                return counter;
+            }
+        })();
+        console.log(add());
+        console.log(add());
+        console.log(add());
+        // 1 2 3
+
+
+        function makeCounter() {
+            let count = 0;
+            return function () {
+                return count++;
+            };
+        }
+        let counter1 = makeCounter();
+        let counter2 = makeCounter();
+        console.log(counter1());
+        console.log(counter1());
+        console.log(counter2());
+
+        //0 1 0
+
+
+        function cart() {
+            let items = 0;
+            return {
+                addItem: function () {
+                    items++;
+                },
+                getItem: function () {
+                    return items;
+                }
+            };
+        }
+
+        const closure = cart();
+        closure.addItem();
+        closure.addItem();
+        closure.addItem();
+        console.log(closure.getItem());
+        // 3
+    </script>
+</body>
+
+</html>

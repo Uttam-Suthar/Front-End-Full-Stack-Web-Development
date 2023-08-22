@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>this is sample script file</p>
+
+    <!-- <script>
+        function print() {
+            var name = "file1"
+            setTimeout(function () {
+                console.log(name)
+            }, 1000)
+        }
+        print();
+
+        // var name = "file2"
+        // console.log(name)
+    </script>
+
+    <script>
+        function print2() {
+            var name = "file2"
+            console.log(name)
+        }
+        print2()
+    </script> -->
+
+
+    <!-- IIFE immediately invoked function expresions -->
+
+    <script>
+        (function () {
+            var name = "file1"
+            setTimeout(function () {
+                console.log(name)
+            }, 1000)
+        })();
+            // print();
+
+                // var name = "file2"
+                // console.log(name)
+    </script>
+
+    <script>
+        (function () {
+            var name = "file2"
+            console.log(name)
+        })();
+        // print2()
+
+        // ques
+
+        var Sequence = (function sequenceIIFE() {
+            var current = 0;
+            return {
+                getCurrentValue: function () {
+                    return current;
+                },
+                getNextValue: function () {
+                    current = current + 1;
+                    return current;
+                }
+            };
+        }());
+        console.log(Sequence.getNextValue());
+        console.log(Sequence.getNextValue());
+        console.log(Sequence.getCurrentValue());
+
+// question
+//             IIFE
+// Send Feedback
+// What will the following statements print in the console ?
+// var a = (function() {
+//                     return typeof arguments;
+//                 })();
+//                 console.log(a);
+
+//                 Options
+// This problem has only one correct answer
+//                 object  this is the correct and
+//                 array
+//                 arguments
+//                 undefined
+//                 Hurray! Correct Answer
+// Solution Description
+//                 Explanation: ‘arguments’ is an inbuilt object in javascript which is accessible only inside functions.It contains information about the arguments passed to the function.
+    </script>
+</body>
+
+</html>

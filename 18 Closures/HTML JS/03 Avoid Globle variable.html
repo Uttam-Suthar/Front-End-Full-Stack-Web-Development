@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>this is sample script file</p>
+    <!-- <script>
+        var name = "file1"
+        console.log(name)
+    </script>
+
+    <script>
+        var name = "file2"
+        console.log(name)
+
+    </script> -->
+
+    <script>
+        var name = "file1"
+        setTimeout(function () {
+            console.log(name)
+        }, 1000)
+
+
+        // var name = "file2"
+        // console.log(name)
+    </script>
+
+    <script>
+        var name = "file2"
+        console.log(name)
+
+    </script>
+
+    What is the expected output?
+    Where this is the HTML code
+
+
+    // question
+    <script src="script1.js">
+        var a = 10;
+        setTimeout(function () {
+            console.log(a);
+        }, 1000);
+    </script>
+
+    <script src="script2.js">
+        var a = 20;
+        console.log(a);
+
+        // 20 20 ans
+
+
+        // que
+        function greet(user) {
+            var user = "Dear " + user;
+            return function (greeting = "Hello! ") {
+                console.log(greeting + user);
+            }
+        }
+
+        var sayHello = greet("Saloni");
+        sayHello();
+
+        // hello! dear saloni
+
+        function foo() {
+            var a = 8;
+            function bar() {
+                console.log(a);
+            }
+            var a = a + 2;
+            return bar;
+        }
+        var fun = foo();
+        fun();
+
+            // 10
+    </script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

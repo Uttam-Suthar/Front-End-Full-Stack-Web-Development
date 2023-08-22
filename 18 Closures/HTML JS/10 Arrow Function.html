@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var multiplying = function (x, y) {
+            return x * y
+        }
+        console.log(multiplying(4, 6));
+
+        var multiplying = (x, y) => { return x * y }
+        var multiplying = (x, y) => x * y;
+        var double = x => x * 2;
+        console.log(multiplying(4, 6));
+        console.log(double(4));
+
+
+        //que
+        var arguments = [1, 2, 3];
+        var arr = () => arguments[2];
+        arr();
+        function foo(n) {
+            var f = () => arguments[0] + n;
+            return f();
+        }
+        foo(3);
+
+        //6
+//         Solution Description
+// You need to check whether arguments exists in DOM or not.
+
+    </script>
+</body>
+
+</html>

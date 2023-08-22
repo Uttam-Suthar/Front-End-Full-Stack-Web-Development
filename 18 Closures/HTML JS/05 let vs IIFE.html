@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // (function () {
+        //     var name = "file1"
+        //     setTimeout(function () {
+        //         console.log(name)
+        //     }, 1000)
+        // })();
+        // print();
+
+        {
+            let fileName = "file1"
+            setTimeout(function () {
+                console.log(fileName)
+            }, 1000)
+        }
+
+
+
+    </script>
+
+    <script>
+        // (function () {
+        //     var name = "file2"
+        //     console.log(name)
+        // })();
+
+        {
+            let fileName = "file2"
+            console.log(fileName)
+        }
+
+        // Identify Scope of Variables  que
+        {
+            var a = 10;
+            let b = 20;
+        }
+
+        c = 30;
+
+        if (c === 30) {
+            let d = 50;
+            console.log(d);
+        }
+        else {
+            var e = 20;
+            console.log(e);
+        }
+//ans
+        // b → block - level
+        //     a → global
+        //     e → global if the else block ran
+        //     d → block - level
+    </script>
+</body>
+
+</html>
