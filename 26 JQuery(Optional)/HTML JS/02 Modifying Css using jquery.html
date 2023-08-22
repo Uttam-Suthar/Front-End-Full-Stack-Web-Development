@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para1">sample of paragraph</p>
+    <p id="para1">sample of paragraph</p>
+    <div></div>
+
+    <script src="jquery-3.7.0.js"></script>
+
+    <script>
+        //modifying css
+        $("#para1").css("color", "red")
+        // $("p").css("color", "red")
+        $("p").css("fontSize", "30px")
+        $("p").css({
+            fontSize: "30px",
+            color: "red"
+        })
+        $("div").css({
+            width: "100px",
+            height: "100px",
+            backgroundColor: "cyan",
+            margin: "50px"
+        })
+
+
+
+    </script>
+</body>
+
+</html>
