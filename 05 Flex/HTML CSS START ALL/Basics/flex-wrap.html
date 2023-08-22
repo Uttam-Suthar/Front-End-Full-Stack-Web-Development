@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flex direction</title>
+	<style>
+		#container{
+			height: auto;
+			width: 75vw;
+	/*		height: 400px;
+			width: auto;*/
+			background-color: darkgrey;
+			display: flex;
+/*			flex-direction: row;
+			flex-wrap: wrap;*/
+
+/*			flex-direction: row;
+			flex-wrap: wrap-reverse;*/
+
+/*			flex-direction: column-reverse;
+			flex-wrap: wrap;*/
+			flex-direction: column-reverse;
+			flex-wrap: wrap-reverse;
+		}
+
+		#container div{
+			height: 200px;
+			width: 200px;
+		}
+
+		#div1{
+			background-color: cyan;
+			/*order: 2;*/
+			/*order: 20;*/
+		}
+
+		#div2{
+			background-color: lightgray;
+			/*order: 1;*/
+			/*order: 14;*/
+		}
+
+		#div3{
+			background-color: orange;
+			/*order: 1;*/
+			/*order: 31;*/
+		}
+		#div4{
+			background-color: rebeccapurple;
+			/*order: -2;*/
+			/*order: 6;*/
+		}
+
+		#div5{
+			background-color: darkred;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div id="div1"> Div 1</div>
+		<div id="div2"> Div 2</div>
+		<div id="div3"> Div 3</div>
+		<div id="div4"> Div 4</div>
+		<div id="div5"> Div 5</div>
+	</div>
+</body>
+</html>
