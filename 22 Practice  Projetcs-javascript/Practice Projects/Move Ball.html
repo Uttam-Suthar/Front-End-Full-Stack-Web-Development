@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Move Ball</title>
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0; */
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        #ball {
+            width: 10rem;
+            height: 10rem;
+            background-color: cyan;
+            border-radius: 50%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            /* transition: all 0.1s ease-in; */
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div id="ball"></div>
+
+    <script>
+        let ball = document.getElementById("ball")
+        let ballDimension = ball.getBoundingClientRect()
+        let width = window.innerWidth
+        let height = window.innerHeight
+        let x = 5, y = 5;
+
+        ball.style.top = Math.floor(Math.random() * 50).toString() + "px";
+        ball.style.left = Math.floor(Math.random() * 50).toString() + "px";
+
+        // ball.style.left = Math.floor(Math.random() * (window.innerHeight - ballDimension.height)) + "px";
+        // ball.style.top = Math.floor(Math.random() * (window.innerWidth - ballDimension.height)) + "px";
+        // let x = ball.style.top
+        // let y = ball.style.left
+
+        console.log(ballDimension)
+        console.log(width, height)
+
+
+
+        document.addEventListener("keydown", function (event) {
+            let code = event.keyCode;
+            console.log(code)
+            if (code == 68 && x <= (width - ballDimension.height + 2) || event.key == 'ArrowRight' && x <= (width - ballDimension.height + 2)) {
+                ball.style.left = x + 'px';
+                x = x + 5;
+            } else if (code == 65 && x >= 2 || event.key == 'ArrowLeft' && x >= 2) {
+                x = x - 5;
+                ball.style.left = x + 'px';
+            }
+
+            if (code == 83 && y <= (height - ballDimension.height + 2) || event.key == 'ArrowDown' && y <= (height - ballDimension.height + 2)) {
+                ball.style.top = y + 'px';
+                y = y + 5;
+            } else if (code == 87 && y >= 2 || event.key == 'ArrowUp' && y >= 2) {
+                y = y - 5;
+                ball.style.top = y + 'px';
+            }
+
+
+        })
+
+
+    </script>
+
+</body>
+
+</html>

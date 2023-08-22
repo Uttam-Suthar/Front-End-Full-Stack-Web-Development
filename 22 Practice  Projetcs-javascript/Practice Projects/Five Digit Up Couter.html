@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Five Digit Up Counter</title>
+
+    <style type="text/css">
+        body {
+            background-color: #d8f8ff;
+            font-family: sans-serif;
+            margin: 50px;
+        }
+
+        #counter-value {
+            padding: 40px 0;
+            margin: 50px 0;
+            background-image: linear-gradient(45deg, #a4f2f2, #efa7d7);
+            text-align: center;
+        }
+
+        #counter-value p {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 0.5rem;
+            word-spacing: 1rem;
+        }
+
+        #input-range {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        #input-range input {
+            padding: 10px;
+            width: 30%;
+            font-size: 1rem;
+        }
+
+        #input-range button {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: none;
+            box-shadow: 0px 5px 20px white;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #counter-container {
+            background-color: #555555;
+            height: 200px;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+
+        .counter {
+            display: inline-block;
+            background-color: aliceblue;
+            width: 15%;
+            max-width: 80px;
+            height: 80px;
+            margin: auto 10px;
+            box-shadow: 0px 0px 5px white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter p {
+            font-size: 3rem;
+            text-align: center;
+            margin: 0;
+            width: 100%;
+            line-height: 80px;
+            border-top: 2px solid black;
+            background-color: aliceblue;
+        }
+
+        p.next {
+            position: absolute;
+            top: 80px;
+        }
+
+        p.animate {
+            transition: all 0.5s;
+            top: 0px;
+            /* transition-duration: 0.5s; */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="counter-value">
+        <p>Enter Value From 1 to 99999</p>
+        <div id="input-range">
+            <input type="number" id="number" placeholder="Enter End Number">
+            <!-- <button id="button" onclick="startCounter()">Start Counter</button> -->
+            <button id="button">Start Counter</button>
+
+        </div>
+    </div>
+
+    <div id="counter-container">
+        <div class="counter">
+            <p class="current">0</p>
+            <p class="next next1">1</p>
+        </div>
+        <div class="counter">
+            <p class="current2">0</p>
+            <p class="next next2">1</p>
+        </div>
+        <div class="counter">
+            <p class="current3">0</p>
+            <p class="next next3">1</p>
+        </div>
+        <div class="counter">
+            <p class="current4">0</p>
+            <p class="next next4">1</p>
+        </div>
+        <div class="counter">
+            <p class="current5">0</p>
+            <p class="next next5">1</p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var button = document.getElementById("button")
+
+        // first digit box 1 
+        var current = document.querySelector(".current")
+        var next = document.querySelector('.next1')
+
+        //second digit box 2
+        var current2 = document.querySelector(".current2")
+        var next2 = document.querySelector('.next2')
+
+        //third digit box 3 
+        var current3 = document.querySelector(".current3")
+        var next3 = document.querySelector('.next3')
+
+        //fourth digit box 4
+        var current4 = document.querySelector(".current4")
+        var next4 = document.querySelector('.next4')
+
+        //fifth digit box 5
+        var current5 = document.querySelector(".current5")
+        var next5 = document.querySelector('.next5')
+
+
+        let inputNum = document.getElementById('number')
+        let count = 0;
+        let interval = 0;
+        let start = true;
+        let x = 1;
+        let digit2 = 1, total = 0, digit3 = 1, digit4 = 1, digit5 = 1;
+
+
+        function animate(interval) {
+
+            if (total <= count) {
+                console.log(total)
+
+                if (x > 9) {
+                    startDigit2Counter()
+                }
+                console.log(x)
+                next.innerHTML = x;
+                next.classList.add("animate")
+
+                setTimeout(function () {
+                    current.innerHTML = x;
+                    // current.innerHTML=next.innerHTML
+                    next.classList.remove("animate")
+                    x++
+                }, 500);
+            }
+            else {
+                clearInterval(interval)
+                return
+            }
+            ++total
+            console.log(total)
+        }
+
+        function startDigit2Counter() {
+            if (digit2 > 9) {
+                startDigit3Counter()
+            }
+            console.log("startDigit2Counter")
+            x = 0
+            console.log(x)
+            next2.innerHTML = digit2;
+            // next2.innerHTML = digit2++;
+            next2.classList.add("animate")
+
+            setTimeout(function () {
+                current2.innerHTML = digit2;
+                // current2.innerHTML=next2.innerHTML
+                next2.classList.remove('animate')
+                digit2++
+            }, 500)
+        }
+
+        function startDigit3Counter() {
+            if (digit3 > 9) {
+                startDigit4Counter()
+            }
+            console.log("startDigit3Counter")
+            x = 0; digit2 = 0
+            // console.log(x)
+            next3.innerHTML = digit3;
+            // next3.innerHTML = digit3++;
+            next3.classList.add("animate")
+
+            setTimeout(function () {
+                current3.innerHTML = digit3;
+                // current3.innerHTML=next3.innerHTML
+                next3.classList.remove('animate')
+                digit3++
+            }, 500)
+        }
+
+        function startDigit4Counter() {
+            if (digit4 > 9) {
+                startDigit5Counter()
+            }
+            console.log("startDigit4Counter")
+            x = 0; digit2 = 0; digit3 = 0;
+            // console.log(x)
+            next4.innerHTML = digit4;
+            // next4.innerHTML = digit4++;
+            next4.classList.add("animate")
+
+            setTimeout(function () {
+                current4.innerHTML = digit4;
+                // current4.innerHTML=next4.innerHTML
+                next4.classList.remove('animate')
+                digit4++
+            }, 500)
+        }
+
+        function startDigit5Counter() {
+            console.log("startDigit5Counter")
+            x = 0; digit2 = 0; digit3 = 0; digit4 = 0;
+            // console.log(x)
+            next5.innerHTML = digit5;
+            // next5.innerHTML = digit5++;
+            next5.classList.add("animate")
+
+            setTimeout(function () {
+                current5.innerHTML = digit5;
+                // current5.innerHTML=next5.innerHTML
+                next5.classList.remove('animate')
+                digit5++
+            }, 500)
+        }
+
+
+
+
+        function startCounter() {
+            // count = inputNum.value
+            count = parseInt(inputNum.value)
+            if ((count >= 1 && count <= 99999) && start === true) {
+                start = false;
+                total = 1;
+                x = 1;
+                interval = setInterval(animate, 700)
+            }
+            else {
+                next.innerHTML = 1;
+                x = 1; total = 1; digit2 = 1; digit3 = 1; digit4 = 1; digit5 = 1;
+                current2.innerHTML = 0;
+                next2.innerHTML = 0;
+                next2.classList.remove('animate');
+                current3.innerHTML = 0;
+                next3.innerHTML = 0;
+                next3.classList.remove('animate');
+
+                current4.innerHTML = 0;
+                next4.innerHTML = 0;
+                next4.classList.remove('animate');
+
+                current5.innerHTML = 0;
+                next5.innerHTML = 0;
+                next5.classList.remove('animate');
+            }
+        }
+
+        button.addEventListener('click', startCounter)
+
+
+
+    </script>
+</body>
+
+</html>
