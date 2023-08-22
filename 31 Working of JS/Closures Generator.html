@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		//Write your function here
+
+
+function generateID(start) {
+    // Write logic here
+
+    let counter = start;
+    let baseYear = 2021;
+    return function() {
+        const id = `A-${baseYear}_${counter}`;
+        counter++;
+        return id;
+    };
+};
+
+var generate = generateID(1)
+console.log(generate())
+console.log(generate())
+console.log(generate())
+
+// out put A-2021_1
+        // A-2021_2
+        // A-2021_3
+
+var generate2 = generateID(4)
+console.log(generate2())
+console.log(generate2())
+
+// output  A-2021_4
+        // A-2021_5 
+
+
+// or
+
+//Write your function here
+
+
+function generateID(start) {
+    // Write logic here
+
+    let count = start;
+    // let baseYear = 2021;
+    return function() {
+        return `A-2021_${count++}`;
+    };
+};
+
+
+
+
+// Input and output has already been handled for you
+
+
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    let lines = chunk.toString().split(' ');
+    let start = lines[0];
+    let n = lines[1];
+    let ans = ''
+    let id = generateID(start)
+    for(let i=0;i<n;i++) {
+        ans += id()+'\n'
+    }
+
+    process.stdout.write(ans);
+    process.exit();
+});
+
+
+
+// Input and output has already been handled for you
+
+
+
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+
+let remainder = '';
+process.stdin.on('data', function (chunk) {
+    let lines = chunk.toString().split(' ');
+    let start = lines[0];
+    let n = lines[1];
+    let ans = ''
+    let id = generateID(start)
+    for(let i=0;i<n;i++) {
+        ans += id()+'\n'
+    }
+
+    process.stdout.write(ans);
+    process.exit();
+});
+	</script>
+</body>
+</html>
