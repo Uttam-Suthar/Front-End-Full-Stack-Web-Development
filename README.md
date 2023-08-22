@@ -1,4 +1,6 @@
 # Front-End-Full-Stack-Web-Development
-Front End Full Stack Web Development
-Getting start with basics
-Learn about HTML
+## Front End Full Stack Web Development
+1 Getting start with basics
+2 Learn about HTML
+br
+hr
